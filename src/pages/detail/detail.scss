@@ -1,0 +1,137 @@
+@use '../../scss/' as *;
+
+.movie-content {
+    max-width: 984px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 0;
+
+    &__poster {
+        background-position: center;
+        background-size: contain;
+        background-repeat: repeat;
+        width: 100%;
+        height: 0;
+        padding-bottom: 50%;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0,0,0,.3)
+        }
+        
+        &__info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.75rem 2rem;
+            color: $white;
+            @include flex(flex-end, flex-start);
+
+            &__img {
+                border: 1px solid #ccc;
+                // margin-left: 4rem;
+                img {
+                    max-height: 150px;
+                }
+            }
+
+            &__txt {
+                margin-left: 1.5rem;
+
+                h2 {
+                    font-weight: 600;
+                }
+
+                h3 {
+                    font-weight: 500;
+                    margin-bottom: .5rem;
+                }
+            }
+        }
+    }
+
+    &__info {
+        margin-top: 1rem;
+        padding: .5rem;
+        background-color: $detail-bg;
+
+        &__title {
+            display: grid;
+            grid-template-columns: 33.33% 33.33% 33.33%;
+            grid-row-gap: .25rem;
+            font-size: .75rem;
+            span {
+                color: $white;
+            }
+        }
+
+        &__overview {
+            h3 {
+                color: $main-color;
+                font-size: 1rem;
+                font-weight: bold;
+                margin-bottom: .5rem;
+            }
+            p {
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+.detail-btn {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: $white;
+    box-shadow: $box-shadow2;
+    padding: 0.5rem 0.75rem;
+    margin-right: .5rem;
+    font-size: 1rem;
+
+    i {
+        margin-right: .25rem;
+        transform: translateY(5%);
+    }
+
+    &.ocean {
+        background-color: #5BC0DE;
+        border: 1px solid #31B0D5;
+
+        &:hover {
+            background-color: #31B0D5;
+        }
+    }
+    
+    &.red {
+        background-color: #d9534f;
+        border: 1px solid #d43f3a;
+        &:hover {
+            background-color: #d43f3a;
+        }
+    }
+}
+
+.trailer-video {
+    overflow: hidden;
+    height: 0;
+    &.active {
+        overflow: visible;
+        height: auto;
+    }
+}
+
+.video {
+    &__title {
+        color: $main-color;
+        margin-bottom: .5rem;
+        font-size: 0.75rem;
+    }
+}

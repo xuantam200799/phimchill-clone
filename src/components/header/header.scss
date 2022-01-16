@@ -1,0 +1,204 @@
+@use '../../scss/' as *;
+
+.logo {
+    padding: 0.5rem 0;
+    img {
+        width: 60%;
+    }
+    
+    @include tablet {
+        text-align: center;
+    }
+}
+
+.header {
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: $header-bg;
+    
+    // @include tablet {
+    //     height: 100vh;
+    // }
+
+    &__wrap {
+        @include flex(center, space-between);
+        height: 100%;
+        padding: 0 2rem;
+
+        @include tablet {
+            @include flex(flex-start, space-between);
+        }
+    }
+
+    &__nav {
+        flex: 1;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $white;
+        @include flex(center, space-between);
+
+        @include tablet {
+            flex: 0;
+        }
+
+        &__left {
+            @include flex(center, space-between);
+            @include tablet {
+                display: none;
+            }    
+
+            & > li {
+                padding-right: 2rem;
+                & > li:last-child {
+                    display: inline-block;
+                    line-height: $header-height;
+                }
+            }
+            &.expand {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 100;
+                background-color: black;
+            }
+        }
+
+        &__right {
+            font-size: 1.4rem;
+            height: $header-height;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__search {
+        position: relative;
+
+        &__toggle {
+            outline: none;
+            border: none;
+            background-color: $header-bg;
+            color: $white;
+            padding: 0.5rem;
+            font-size: 1.4rem;
+
+            i:last-child {
+                display: none;
+            }
+        }
+        &__toggle.active {
+            i:first-child {
+                display: none;
+            }
+
+            i:last-child {
+                display: block;
+            }
+        }
+
+        &__input-group {
+            position: absolute;
+            right: -10px;
+            border-radius: $border-radius;
+            overflow: hidden;
+            box-shadow: $box-shadow;
+            display: none;
+
+            &__container {
+                position: relative;
+
+                input {
+                    padding: 0.5rem;
+                    outline: none;
+                    font-size: 1rem;
+                    min-width: 300px;
+                }
+    
+                button {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    outline: none;
+                    border: none;
+                    background-color: transparent;
+                    padding: 0 0.8rem;
+                    font-size: 1rem;
+                    border-radius: $border-radius;
+
+                    &:hover {
+                        background-color: $main-color;
+                    }
+                }
+            }
+        }
+        &__input-group.expand {
+            display: block;
+        }
+    }
+
+    &__toggle {
+        display: none;
+        height: $header-height;
+        
+        button{
+            font-size: 1.4rem;
+            padding: 0.5rem;
+            outline: none;
+            background-color: transparent;
+            border: none;
+            color: $white;
+        }
+
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.dropdown {
+    position: relative;
+
+    &__btn {
+        display:inline-block;
+        line-height: $header-height;
+        cursor: pointer;
+    }
+
+    &__content {
+        display: none;
+        position: absolute;
+        top: $header-height;
+        left: 0;
+        background-color: $header-bg;
+        min-width: 400px;
+
+        span {
+            text-transform: none;
+            
+            a {
+                display: inline-block;
+                line-height: 100%;
+                padding: .6rem 0.5rem;
+                width: 50%;
+            }
+        }
+    }
+
+    &:hover .dropdown__content {
+        display: block;
+    }
+    &:hover .dropdown__btn {
+        color: $main-color;
+    }
+}
