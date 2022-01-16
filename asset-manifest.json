@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/phimchill-clone/static/css/main.49f36f1b.css",
+    "main.js": "/phimchill-clone/static/js/main.360aab8f.js",
+    "static/js/787.35284244.chunk.js": "/phimchill-clone/static/js/787.35284244.chunk.js",
+    "static/media/boxicons.svg": "/phimchill-clone/static/media/boxicons.045b05bf2dc119267a90.svg",
+    "static/media/boxicons.eot": "/phimchill-clone/static/media/boxicons.092b78589f3f53e60030.eot",
+    "static/media/boxicons.woff": "/phimchill-clone/static/media/boxicons.0f4528cf3c75a4b361c0.woff",
+    "static/media/boxicons.ttf": "/phimchill-clone/static/media/boxicons.cbd149c55e2396cb52e7.ttf",
+    "static/media/boxicons.woff2": "/phimchill-clone/static/media/boxicons.8d765747a5588f36ff61.woff2",
+    "index.html": "/phimchill-clone/index.html",
+    "main.49f36f1b.css.map": "/phimchill-clone/static/css/main.49f36f1b.css.map",
+    "main.360aab8f.js.map": "/phimchill-clone/static/js/main.360aab8f.js.map",
+    "787.35284244.chunk.js.map": "/phimchill-clone/static/js/787.35284244.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49f36f1b.css",
+    "static/js/main.360aab8f.js"
+  ]
+}
